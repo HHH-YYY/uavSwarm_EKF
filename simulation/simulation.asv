@@ -1,0 +1,23 @@
+classdef simulation
+    %SIMULATION Abstract class for a simulation
+    
+    properties
+        sampleTime
+        numRobots
+        world
+        
+    end
+    
+    methods (Abstract)
+        control_phase(obj)
+        step(obj)
+    end
+    
+    methods
+        function readS(obj)
+            readings = obj.world.readSensors();
+        end
+    end
+    
+end
+
